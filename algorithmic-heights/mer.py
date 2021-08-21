@@ -5,15 +5,18 @@ n, a, m, b = int(data[0]), tuple(map(int, data[1].split())), int(data[2]), tuple
 
 with open("rosalind_mer_output.txt", "w") as ff:
     x, y = 0, 0
+    result = []
     while x < n and y < m:
         if a[x] < b[y]:
-            print(a[x], end=" ", file=ff)
+            result.append(a[x])
             x += 1
         else:
-            print(b[y], end=" ", file=ff)
+            result.append(b[y])
             y += 1
 
     if x < n:
-        print(*a[x:], file=ff)
+        result.extend(a[x:])
     elif y < m:
-        print(*b[y:], file=ff)
+        result.extend(b[y:])
+
+print(*result, sep=" ")
