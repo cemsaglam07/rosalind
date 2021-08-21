@@ -12,5 +12,5 @@ for i in range(1, n):
         count += 1
         k = k - 1
 
-with open("rosalind_ins_output.txt", "w") as ff:
-    print(count, file=ff)
+with open("rosalind_ins_output.txt", "w") as f:
+    print(count, file=f)
